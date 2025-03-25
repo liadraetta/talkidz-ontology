@@ -1,0 +1,756 @@
+@prefix : <http://www.semanticweb.org/nicol/ontologies/2024/7/talkidz/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/ontologies/2024/7/talkidz> .
+
+<http://www.semanticweb.org/ontologies/2024/7/talkidz> rdf:type owl:Ontology ;
+                                                        rdfs:label "talkidz"@it ;
+                                                        <http://purl.org/dc/elements/1.1/date> "2024-08-20T12:00:00"^^xsd:dateTime ;
+                                                        :preferredNamespacePrefix "tk" ;
+                                                        <http://purl.org/dc/elements/1.1/description> "Talkidz is a speech therapy ontology organizing concepts, treatments, and disorders, enhancing data sharing, research, and therapy development." ;
+                                                        :preferredNamespaceUri "talkidz" ;
+                                                        <http://purl.org/dc/elements/1.1/title> "Talkidz - Ontology for speech therapy consulting" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+<http://purl.org/dc/elements/1.1/date> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/preferredNamespacePrefix
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/preferredNamespaceUri
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/severity
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/severity> rdf:type rdfs:Datatype ;
+                                                                owl:equivalentClass [ rdf:type rdfs:Datatype ;
+                                                                                      owl:oneOf [ rdf:type rdf:List ;
+                                                                                                  rdf:first "Mild" ;
+                                                                                                  rdf:rest [ rdf:type rdf:List ;
+                                                                                                             rdf:first "NearlyAbsent" ;
+                                                                                                             rdf:rest [ rdf:type rdf:List ;
+                                                                                                                        rdf:first "Severe" ;
+                                                                                                                        rdf:rest rdf:nil
+                                                                                                                      ]
+                                                                                                           ]
+                                                                                                ]
+                                                                                    ] .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/affects
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/affects> rdf:type owl:ObjectProperty ;
+                                                               rdfs:domain <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechOrLanguageDisorder> ;
+                                                               rdfs:range <http://www.semanticweb.org/ontologies/2024/7/talkidz/LinguisticArea> ;
+                                                               rdfs:comment "The property \"Affects\" links a speech error to one o more specific linguistic area"@en ;
+                                                               rdfs:label "Affects"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/aimedToResolve
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/aimedToResolve> rdf:type owl:ObjectProperty ;
+                                                                      owl:inverseOf <http://www.semanticweb.org/ontologies/2024/7/talkidz/isTreatedWithTherapy> ;
+                                                                      rdfs:domain <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechTherapy> ;
+                                                                      rdfs:range <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechOrLanguageDisorder> ;
+                                                                      rdfs:comment "This property is useful to understand which disorder is aimed by a specific therapy." ;
+                                                                      rdfs:label "AimedToResolve" .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/appliesTherapy
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/appliesTherapy> rdf:type owl:ObjectProperty ;
+                                                                      owl:inverseOf <http://www.semanticweb.org/ontologies/2024/7/talkidz/therapyIsAppliedBy> ;
+                                                                      rdfs:domain <http://www.semanticweb.org/ontologies/2024/7/talkidz/Therapist> ;
+                                                                      rdfs:range <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechTherapy> ;
+                                                                      rdfs:comment "This relation says what therapy is applied by the therapist"@en ;
+                                                                      rdfs:label "AppliesTherapy"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/followsTherapy
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/followsTherapy> rdf:type owl:ObjectProperty ;
+                                                                      owl:inverseOf <http://www.semanticweb.org/ontologies/2024/7/talkidz/therapyIsFollowedBy> ;
+                                                                      rdf:type owl:TransitiveProperty ;
+                                                                      rdfs:domain <http://www.semanticweb.org/ontologies/2024/7/talkidz/Patient> ;
+                                                                      rdfs:range <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechTherapy> ;
+                                                                      rdfs:comment "Maps a patient to one or more specific therapy he/she is following."@en ;
+                                                                      rdfs:label "FollowsTherapy"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/hasSeverity
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/hasSeverity> rdf:type owl:ObjectProperty ,
+                                                                            owl:FunctionalProperty ;
+                                                                   rdfs:domain <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechOrLanguageDisorder> ;
+                                                                   rdfs:range <http://www.semanticweb.org/ontologies/2024/7/talkidz/Severity> ;
+                                                                   rdfs:comment "Relation for general patient disorder." ;
+                                                                   rdfs:label "HasSeverity" .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/inChargeOf
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/inChargeOf> rdf:type owl:ObjectProperty ;
+                                                                  owl:inverseOf <http://www.semanticweb.org/ontologies/2024/7/talkidz/underResponsibilityOf> ;
+                                                                  rdfs:domain <http://www.semanticweb.org/ontologies/2024/7/talkidz/AdultInCharge> ;
+                                                                  rdfs:range <http://www.semanticweb.org/ontologies/2024/7/talkidz/Patient> ;
+                                                                  rdfs:comment "The adult responsible for the infant patient."@en ;
+                                                                  rdfs:label "InChargeOf"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/isBeingTreatedBy
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/isBeingTreatedBy> rdf:type owl:ObjectProperty ;
+                                                                        owl:inverseOf <http://www.semanticweb.org/ontologies/2024/7/talkidz/isTreating> ;
+                                                                        rdfs:domain <http://www.semanticweb.org/ontologies/2024/7/talkidz/Patient> ;
+                                                                        rdfs:range <http://www.semanticweb.org/ontologies/2024/7/talkidz/Therapist> ;
+                                                                        rdfs:comment "Maps a patient with one or more therapists."@en ;
+                                                                        rdfs:label "IsBeingTreatedBy"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/isExhibiting
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/isExhibiting> rdf:type owl:ObjectProperty ,
+                                                                             owl:TransitiveProperty ;
+                                                                    rdfs:domain <http://www.semanticweb.org/ontologies/2024/7/talkidz/Patient> ;
+                                                                    rdfs:range <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechOrLanguageDisorder> ;
+                                                                    rdfs:comment "Maps a patient with one or more speech disorders."@en ;
+                                                                    rdfs:label "IsExhibiting"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/isLegalGuardianOf
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/isLegalGuardianOf> rdf:type owl:ObjectProperty ;
+                                                                         rdfs:subPropertyOf <http://www.semanticweb.org/ontologies/2024/7/talkidz/inChargeOf> .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/isParentOf
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/isParentOf> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:subPropertyOf <http://www.semanticweb.org/ontologies/2024/7/talkidz/inChargeOf> ;
+                                                                  rdfs:range <http://www.semanticweb.org/ontologies/2024/7/talkidz/Patient> ;
+                                                                  rdfs:comment "mother-patient relation." ;
+                                                                  rdfs:label "IsMotherOf" .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/isTreatedWithTherapy
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/isTreatedWithTherapy> rdf:type owl:ObjectProperty ;
+                                                                            rdfs:domain <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechOrLanguageDisorder> ;
+                                                                            rdfs:range <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechTherapy> ;
+                                                                            rdfs:comment "The therapy suggested for a specific disorder." ;
+                                                                            rdfs:label "IsTreatedWithTherapy"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/isTreating
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/isTreating> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:domain <http://www.semanticweb.org/ontologies/2024/7/talkidz/Therapist> ;
+                                                                  rdfs:range <http://www.semanticweb.org/ontologies/2024/7/talkidz/Patient> ;
+                                                                  owl:propertyChainAxiom ( <http://www.semanticweb.org/ontologies/2024/7/talkidz/appliesTherapy>
+                                                                                           <http://www.semanticweb.org/ontologies/2024/7/talkidz/therapyIsFollowedBy>
+                                                                                         ) ;
+                                                                  rdfs:comment "The relation between therapist and patient."@en ;
+                                                                  rdfs:label "IsTreating"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/makesSpeechError
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/makesSpeechError> rdf:type owl:ObjectProperty ;
+                                                                        rdfs:domain <http://www.semanticweb.org/ontologies/2024/7/talkidz/Patient> ;
+                                                                        rdfs:range <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechError> ;
+                                                                        rdfs:comment "Property needed to understand wich speech error is made by a patient"@en ;
+                                                                        rdfs:label "Makes speech errors"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/therapyIsAppliedBy
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/therapyIsAppliedBy> rdf:type owl:ObjectProperty ;
+                                                                          rdfs:domain <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechTherapy> ;
+                                                                          rdfs:range <http://www.semanticweb.org/ontologies/2024/7/talkidz/Therapist> ;
+                                                                          rdfs:comment "This property is needed to understand which therapist is applying a specific therapy." ;
+                                                                          rdfs:label "TherapyIsAppliedBy" .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/therapyIsFollowedBy
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/therapyIsFollowedBy> rdf:type owl:ObjectProperty ;
+                                                                           rdfs:domain <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechTherapy> ;
+                                                                           rdfs:range <http://www.semanticweb.org/ontologies/2024/7/talkidz/Patient> ;
+                                                                           rdfs:comment "This property maps a therapy to a patient." ;
+                                                                           rdfs:label "TherapyIsFollowedBy" .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/treatsDisorder
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/treatsDisorder> rdf:type owl:ObjectProperty ;
+                                                                      rdfs:domain <http://www.semanticweb.org/ontologies/2024/7/talkidz/Therapist> ;
+                                                                      rdfs:range <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechOrLanguageDisorder> ;
+                                                                      rdfs:comment "Maps a therapist over speech disorders he/she can treat."@en ;
+                                                                      rdfs:label "TreatsDisorder"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/underResponsibilityOf
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/underResponsibilityOf> rdf:type owl:ObjectProperty ;
+                                                                             rdfs:domain <http://www.semanticweb.org/ontologies/2024/7/talkidz/Patient> ;
+                                                                             rdfs:range <http://www.semanticweb.org/ontologies/2024/7/talkidz/AdultInCharge> ;
+                                                                             rdfs:comment "Maps a patient with a responsible adult."@en ;
+                                                                             rdfs:label "UnderResponsibilityOf"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/bilingual
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/bilingual> rdf:type owl:DatatypeProperty ;
+                                                                 rdfs:subPropertyOf owl:topDataProperty ;
+                                                                 rdfs:domain foaf:Person ;
+                                                                 rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/birthMonth
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/birthMonth> rdf:type owl:DatatypeProperty ;
+                                                                  rdfs:domain <http://www.semanticweb.org/ontologies/2024/7/talkidz/Patient> .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/birthYear
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/birthYear> rdf:type owl:DatatypeProperty ;
+                                                                 rdfs:subPropertyOf owl:topDataProperty ;
+                                                                 rdfs:domain <http://www.semanticweb.org/ontologies/2024/7/talkidz/Patient> .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/therapyEndDate
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/therapyEndDate> rdf:type owl:DatatypeProperty ;
+                                                                      rdfs:subPropertyOf owl:topDataProperty ;
+                                                                      rdfs:domain <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechTherapy> ;
+                                                                      rdfs:range xsd:dateTime ;
+                                                                      rdfs:comment "Therapy start date."@en ;
+                                                                      rdfs:label "TherapyStartDate"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/therapyIsSuccessful
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/therapyIsSuccessful> rdf:type owl:DatatypeProperty ;
+                                                                           rdfs:domain <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechTherapy> ;
+                                                                           rdfs:range xsd:boolean ;
+                                                                           rdfs:comment "Qualitatively reports the outcome of a therapy, once finished." ;
+                                                                           rdfs:label "TherapyIsSuccessful" .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/therapyStartDate
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/therapyStartDate> rdf:type owl:DatatypeProperty ;
+                                                                        rdfs:subPropertyOf owl:topDataProperty ;
+                                                                        rdfs:domain <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechTherapy> ;
+                                                                        rdfs:range xsd:dateTime ;
+                                                                        rdfs:comment "Therapy end date"@en ;
+                                                                        rdfs:label "TherapyEndDate"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/AdultInCharge
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/AdultInCharge> rdf:type owl:Class ;
+                                                                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty <http://www.semanticweb.org/ontologies/2024/7/talkidz/inChargeOf> ;
+                                                                                           owl:someValuesFrom foaf:Person
+                                                                                         ] ;
+                                                                     rdfs:subClassOf foaf:Person ;
+                                                                     owl:disjointWith <http://www.semanticweb.org/ontologies/2024/7/talkidz/Patient> ;
+                                                                     rdfs:comment "The adult being in charge of the patient, which must be over age of 18."@en ;
+                                                                     rdfs:label "AdultInCharge"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/CognitiveLinguisticTherapy
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/CognitiveLinguisticTherapy> rdf:type owl:Class ;
+                                                                                  rdfs:subClassOf <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechTherapy> ;
+                                                                                  rdfs:comment "Cognitive-Linguistic Therapy addresses communication difficulties caused by cognitive impairment. It refers to therapy that targets cognitive functions such as attention, memory, and problem-solving skills."@en ;
+                                                                                  rdfs:label "Cognitive Linguistic Therapy"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/DevelopmentalLanguageDisorder
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/DevelopmentalLanguageDisorder> rdf:type owl:Class ;
+                                                                                     rdfs:subClassOf <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechOrLanguageDisorder> ;
+                                                                                     rdfs:comment """Developmental language disorder is characterised by persistent deficits in the acquisition, understanding, production or use of language (spoken or signed), that arise during the developmental period, typically during early childhood, and cause significant limitations in the individual’s ability to communicate. The individual’s ability to understand, produce or use language is markedly below what would be expected given the individual’s age. The language deficits are not explained by another neurodevelopmental disorder or a sensory impairment or neurological condition, including the effects of brain injury or infection. 
+CODE 6A01.2 https://icd.who.int/browse/2024-01/mms/en#862918022"""@en ;
+                                                                                     rdfs:label "DevelopmentalLanguageDisorder"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/IndirectTherapy
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/IndirectTherapy> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechTherapy> ;
+                                                                       rdfs:comment "Indirect therapy refers to interventions that support language development through modifications in the environment, caregiver training, or mediated interactions rather than direct patient engagement"@en ;
+                                                                       rdfs:label "Indirect therapy"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/LegalGuardian
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/LegalGuardian> rdf:type owl:Class ;
+                                                                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty <http://www.semanticweb.org/ontologies/2024/7/talkidz/isLegalGuardianOf> ;
+                                                                                           owl:someValuesFrom <http://www.semanticweb.org/ontologies/2024/7/talkidz/Patient>
+                                                                                         ] ;
+                                                                     rdfs:subClassOf <http://www.semanticweb.org/ontologies/2024/7/talkidz/AdultInCharge> ;
+                                                                     rdfs:comment "A person who plays the role of Legal guardian"@en ;
+                                                                     rdfs:label "Legal Guardian"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/LinguisticArea
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/LinguisticArea> rdf:type owl:Class ;
+                                                                      rdfs:comment "Class for the description of linguistic areas that may concern speech errors, such as the lexical-semantic, morphosyntactic, and phonological areas."@en ;
+                                                                      rdfs:label "Linguistic area"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/MotorTherapy
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/MotorTherapy> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechTherapy> ;
+                                                                    rdfs:comment "The class motor therapy refers to interventions that improve motor skills and coordination to support physical and cognitive functions, often used in rehabilitation and developmental therapy."@en ;
+                                                                    rdfs:label "Motor Therapy"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/Parent
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/Parent> rdf:type owl:Class ;
+                                                              owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty <http://www.semanticweb.org/ontologies/2024/7/talkidz/isParentOf> ;
+                                                                                    owl:someValuesFrom <http://www.semanticweb.org/ontologies/2024/7/talkidz/Patient>
+                                                                                  ] ;
+                                                              rdfs:subClassOf <http://www.semanticweb.org/ontologies/2024/7/talkidz/AdultInCharge> ;
+                                                              rdfs:comment "Parent of the patient in charge"@en ;
+                                                              rdfs:label "Parent"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/Patient
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/Patient> rdf:type owl:Class ;
+                                                               rdfs:subClassOf foaf:Person ,
+                                                                               [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty <http://www.semanticweb.org/ontologies/2024/7/talkidz/underResponsibilityOf> ;
+                                                                                 owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                 owl:onClass <http://www.semanticweb.org/ontologies/2024/7/talkidz/AdultInCharge>
+                                                                               ] ;
+                                                               owl:disjointWith <http://www.semanticweb.org/ontologies/2024/7/talkidz/Therapist> ;
+                                                               rdfs:comment "Patient class, which must have a birthday associated to each instance."@en ;
+                                                               rdfs:label "Patient"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/Severity
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/Severity> rdf:type owl:Class ;
+                                                                owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                      owl:oneOf ( <http://www.semanticweb.org/ontologies/2024/7/talkidz/Mild>
+                                                                                                  <http://www.semanticweb.org/ontologies/2024/7/talkidz/NearlyAbsent>
+                                                                                                  <http://www.semanticweb.org/ontologies/2024/7/talkidz/Severe>
+                                                                                                )
+                                                                                    ] ;
+                                                                rdfs:comment "The Class indetify the severity of a certain language disease such as \"Mild\", \"nearly Absent\" or \"Sever\""@en ;
+                                                                rdfs:label "Severity" .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechError
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechError> rdf:type owl:Class ;
+                                                                   rdfs:comment "Class for the specific mispronunciaton encountered by the patient and registered by the therapist. Diagnosis in DOLCE ontology"@en ;
+                                                                   rdfs:label "SpeechError"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechFluencyDisorder
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechFluencyDisorder> rdf:type owl:Class ;
+                                                                             rdfs:subClassOf <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechOrLanguageDisorder> ;
+                                                                             rdfs:comment """Developmental speech fluency disorder is characterised by frequent or pervasive disruption of the normal rhythmic flow and rate of speech characterised by repetitions and prolongations in sounds, syllables, words, and phrases, as well as blocking and word avoidance or substitutions. The speech dysfluency is persistent over time. The onset of speech dysfluency occurs during the developmental period and speech fluency is markedly below what would be expected for age. Speech dysfluency results in significant impairment in social communication, personal, family, social, educational, occupational or other important areas of functioning. The speech dysfluency is not better accounted for by a Disorder of Intellectual Development, a Disease of the Nervous System, a sensory impairment, or a structural abnormality, or other speech or voice disorder. 
+CODE 6A01.1 https://icd.who.int/browse/2024-01/mms/en#654956298""" ;
+                                                                             rdfs:label "SpeechFluencyDisorder"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechOrLanguageDisorder
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechOrLanguageDisorder> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty <http://www.semanticweb.org/ontologies/2024/7/talkidz/isTreatedWithTherapy> ;
+                                                                                                  owl:someValuesFrom <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechTherapy>
+                                                                                                ] ;
+                                                                                rdfs:comment "Developmental Speech or Language Disorders are characterized by difficulties in understanding or producing speech and language or in using language in context for the purposes of communication. CODE 6A01 https://icd.who.int/browse/2024-01/mms/en#33269655"@en ;
+                                                                                rdfs:label "SpeechOrLanagugeDisorder"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechSoundDisorder
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechSoundDisorder> rdf:type owl:Class ;
+                                                                           rdfs:subClassOf <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechOrLanguageDisorder> ;
+                                                                           rdfs:comment "Developmental speech sound disorder is characterised by difficulties in the acquisition, production and perception of speech that result in errors of pronunciation, either in number or types of speech errors made or the overall quality of speech production, that are outside the limits of normal variation expected for age and level of intellectual functioning and result in reduced intelligibility and significantly affect communication. The errors in pronunciation arise during the early developmental period and cannot be explained by social, cultural, and other environmental variations (e.g., regional dialects). The speech errors are not fully explained by a hearing impairment or a structural or neurological abnormality. CODE 6A01.0 https://icd.who.int/browse/2024-01/mms/en#551966778" ;
+                                                                           rdfs:label "SpeechSoundDisorder"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechTherapy
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechTherapy> rdf:type owl:Class ;
+                                                                     rdfs:comment "Speech therapy is treatment that improves your ability to talk and use other language skills.  Plan in DOLCE ontology"@en ;
+                                                                     rdfs:label "SpeechTherapy"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/StructuralError
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/StructuralError> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechError> ;
+                                                                       rdfs:comment "Structural errors affect the syllable or phonological structure of a word. These processes typically involve the modification of how sounds are arranged or reduced within a word. Examples include deleting whole syllables or simplifying consonant clusters. Structural errors often impact the overall form of a word without necessarily changing its individual sounds." ;
+                                                                       rdfs:label "Structural Error" .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/SystemError
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/SystemError> rdf:type owl:Class ;
+                                                                   rdfs:subClassOf <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechError> ;
+                                                                   rdfs:comment "System errors involve changes in the properties of individual phonemes and are often more systematic, affecting whole categories of sounds. These errors may involve shifting between different manners or places of articulation, as well as altering voicing. System errors are more about how specific sounds (consonants or vowels) behave within the phonological system." ;
+                                                                   rdfs:label "System Error" .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/Therapist
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/Therapist> rdf:type owl:Class ;
+                                                                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <http://www.semanticweb.org/ontologies/2024/7/talkidz/isTreating> ;
+                                                                                       owl:someValuesFrom <http://www.semanticweb.org/ontologies/2024/7/talkidz/Patient>
+                                                                                     ] ;
+                                                                 rdfs:subClassOf foaf:Person ;
+                                                                 rdfs:comment "Either a speech therapist or any kind of therapist that can diagnose and treat speech disorders."@en ;
+                                                                 rdfs:label "Therapist"@en .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+foaf:Person rdf:type owl:Class ;
+            rdfs:comment "Person class, Agent in DOLCE ontology."@en ;
+            rdfs:label "Person"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/Affrication
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/Affrication> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechError> ;
+                                                                   rdfs:comment "Replacing a fricative with an affricate"@en ;
+                                                                   rdfs:label "Affrication"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/Aphasia
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/Aphasia> rdf:type owl:NamedIndividual ,
+                                                                        <http://www.semanticweb.org/ontologies/2024/7/talkidz/DevelopmentalLanguageDisorder> ;
+                                                               rdfs:comment "Language disorder affecting speaking, understanding, reading, or writing, often due to brain injury"@en ;
+                                                               rdfs:label "Aphasia"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/Cluttering
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/Cluttering> rdf:type owl:NamedIndividual ,
+                                                                           <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechFluencyDisorder> ;
+                                                                  rdfs:comment "A speech disorder characterized by rapid, irregular speech that is difficult to understand"@en ;
+                                                                  rdfs:label "Cluttering"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/ConsonantDeletion
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/ConsonantDeletion> rdf:type owl:NamedIndividual ,
+                                                                                  <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechError> ;
+                                                                         rdfs:comment "Omitting a consonant in a word, often at the beginning or end"@en ;
+                                                                         rdfs:label "ConsonantalDeletion"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/ConsonantalHarmony
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/ConsonantalHarmony> rdf:type owl:NamedIndividual ,
+                                                                                   <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechError> ;
+                                                                          rdfs:comment "One consonant in a word changes to be more like another"@en ;
+                                                                          rdfs:label "ConsonantalHarmony"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/Debilitating
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/Debilitating> rdf:type owl:NamedIndividual ;
+                                                                    rdfs:comment "A sever form of speech disorder has been recorded, to the point that the patients struggles to formulate sensible, complete sentences."@en ,
+                                                                                 "Debilitating"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/Depalatalization
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/Depalatalization> rdf:type owl:NamedIndividual ,
+                                                                                 <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechError> ;
+                                                                        rdfs:comment "Replacing a palatal sound with a non-palatal one"@en ;
+                                                                        rdfs:label "Depalatalization"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/Desonorization
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/Desonorization> rdf:type owl:NamedIndividual ,
+                                                                               <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechError> ;
+                                                                      rdfs:comment "Substituting a voiced sound with its voiceless counterpart"@en ;
+                                                                      rdfs:label "Desonorization"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/DipthongReduction
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/DipthongReduction> rdf:type owl:NamedIndividual ,
+                                                                                  <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechError> ;
+                                                                         rdfs:comment "Simplifying a diphthong to a single vowel"@en ;
+                                                                         rdfs:label "DipthongReduction"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/Distortion
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/Distortion> rdf:type owl:NamedIndividual ,
+                                                                           <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechError> ;
+                                                                  rdfs:comment "Producing unclear or altered speech sounds, often causing slurred or imprecise pronunciation"@en ;
+                                                                  rdfs:label "Distortion"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/Dysarthria
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/Dysarthria> rdf:type owl:NamedIndividual ,
+                                                                           <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechSoundDisorder> ;
+                                                                  rdfs:comment "Weak or slurred speech due to impaired muscle control, often caused by neurological damage"@en ;
+                                                                  rdfs:label "Dysarthria"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/Dyslalia
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/Dyslalia> rdf:type owl:NamedIndividual ,
+                                                                         <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechFluencyDisorder> ;
+                                                                rdfs:comment "Difficulty in pronouncing certain sounds or words, often due to developmental or structural issues"@en ;
+                                                                rdfs:label "Dyslalia"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/Dyslexia
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/Dyslexia> rdf:type owl:NamedIndividual ,
+                                                                         <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechFluencyDisorder> ;
+                                                                rdfs:comment "Learning disorder marked by difficulty reading, spelling, or interpreting letters and words"@en ;
+                                                                rdfs:label "Dyslexia"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/Dysphagia
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/Dysphagia> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechOrLanguageDisorder> ;
+                                                                 rdfs:comment "Difficulty swallowing, which can lead to choking, malnutrition, or aspiration, often from neurological conditions"@en ;
+                                                                 rdfs:label "Dysphagia"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/Dyspraxia
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/Dyspraxia> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechFluencyDisorder> ;
+                                                                 rdfs:comment "Motor coordination disorder affecting movement, speech, or planning tasks, impacting daily activities"@en ;
+                                                                 rdfs:label "Dyspraxia"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/Epenthesis
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/Epenthesis> rdf:type owl:NamedIndividual ,
+                                                                           <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechError> ;
+                                                                  rdfs:comment "Adding an extra sound or syllable within a word"@en ;
+                                                                  rdfs:label "Epenthesis"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/Frication
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/Frication> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechError> ;
+                                                                 rdfs:comment "Substituting a plosive sound with a fricative sound"@en ;
+                                                                 rdfs:label "Frication"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/Gliding
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/Gliding> rdf:type owl:NamedIndividual ,
+                                                                        <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechError> ;
+                                                               rdfs:comment "Replacing liquids \"r\" or \"l\" with glides \"w\""@en ;
+                                                               rdfs:label "Gliding"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/GroupsReduction
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/GroupsReduction> rdf:type owl:NamedIndividual ,
+                                                                                <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechError> ;
+                                                                       rdfs:comment "Simplification of two or more consecutive consonants."@en ;
+                                                                       rdfs:label "GroupsReduction"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/Idiosyncrasy
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/Idiosyncrasy> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechError> ;
+                                                                    rdfs:comment "Unique speech errors specific to an individual that don't follow typical patterns" ;
+                                                                    rdfs:label "Idiosyncrasy"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/LanguageApraxia
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/LanguageApraxia> rdf:type owl:NamedIndividual ,
+                                                                                <http://www.semanticweb.org/ontologies/2024/7/talkidz/DevelopmentalLanguageDisorder> ;
+                                                                       rdfs:comment "A motor speech disorder causing difficulty in planning and producing speech movements correctly"@en ;
+                                                                       rdfs:label "LanguageApraxia"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/LexicalSemanticsArea
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/LexicalSemanticsArea> rdf:type owl:NamedIndividual ,
+                                                                                     <http://www.semanticweb.org/ontologies/2024/7/talkidz/LinguisticArea> .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/LiquidReduction
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/LiquidReduction> rdf:type owl:NamedIndividual ,
+                                                                                <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechError> ;
+                                                                       rdfs:comment "Omitting \"r\" or \"l\""@en ;
+                                                                       rdfs:label "LiquidReduction"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/Metathesis
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/Metathesis> rdf:type owl:NamedIndividual ,
+                                                                           <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechError> ;
+                                                                  rdfs:comment "Reversing the order of sounds or syllables"@en ;
+                                                                  rdfs:label "Metathesis"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/Mild
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/Mild> rdf:type owl:NamedIndividual ,
+                                                                     <http://www.semanticweb.org/ontologies/2024/7/talkidz/Severity> ;
+                                                            rdfs:comment "Mild symptoms recorded."@en ;
+                                                            rdfs:label "Mild"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/MispelledPhoneme
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/MispelledPhoneme> rdf:type owl:NamedIndividual ,
+                                                                                 <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechError> ;
+                                                                        rdfs:comment "Incorrect pronunciation of a sound leading to misinterpretation"@en ;
+                                                                        rdfs:label "MispelledPhoneme"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/MorphoSyntacticalArea
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/MorphoSyntacticalArea> rdf:type owl:NamedIndividual ,
+                                                                                      <http://www.semanticweb.org/ontologies/2024/7/talkidz/LinguisticArea> .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/NearlyAbsent
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/NearlyAbsent> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.semanticweb.org/ontologies/2024/7/talkidz/Severity> ;
+                                                                    rdfs:comment "Neglegible, but still present speech disorder(s) recorded."@en ;
+                                                                    rdfs:label "NearlyAbsent"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/OtherDisorder
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/OtherDisorder> rdf:type owl:NamedIndividual ,
+                                                                              <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechOrLanguageDisorder> ;
+                                                                     rdfs:comment "Other disorder."@en ;
+                                                                     rdfs:label "OtherDisorder"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/Palatalization
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/Palatalization> rdf:type owl:NamedIndividual ,
+                                                                               <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechError> ;
+                                                                      rdfs:comment "Replacing a non-palatal sound with a palatal sound"@en ;
+                                                                      rdfs:label "Palatalization"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/PhoneticArea
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/PhoneticArea> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.semanticweb.org/ontologies/2024/7/talkidz/LinguisticArea> .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/PhonologicalArea
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/PhonologicalArea> rdf:type owl:NamedIndividual ,
+                                                                                 <http://www.semanticweb.org/ontologies/2024/7/talkidz/LinguisticArea> .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/Posterization
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/Posterization> rdf:type owl:NamedIndividual ,
+                                                                              <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechError> ;
+                                                                     rdfs:comment "Front sounds are replaced with back sounds"@en ;
+                                                                     rdfs:label "Posteriorization"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/PragmaticArea
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/PragmaticArea> rdf:type owl:NamedIndividual ,
+                                                                              <http://www.semanticweb.org/ontologies/2024/7/talkidz/LinguisticArea> .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/Replacement
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/Replacement> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechError> ;
+                                                                   rdfs:comment "Substituting one phoneme with another"@en ;
+                                                                   rdfs:label "Replacement"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/Severe
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/Severe> rdf:type owl:NamedIndividual ,
+                                                                       <http://www.semanticweb.org/ontologies/2024/7/talkidz/Severity> .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/Sonorization
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/Sonorization> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechError> ;
+                                                                    rdfs:comment "Changing a voiceless sound into a voiced sound"@en ;
+                                                                    rdfs:label "Sonorization"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/Stopping
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/Stopping> rdf:type owl:NamedIndividual ,
+                                                                         <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechError> ;
+                                                                rdfs:comment "Replacing fricatives or affricates with stops"@en ;
+                                                                rdfs:label "Stopping"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/Stuttering
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/Stuttering> rdf:type owl:NamedIndividual ,
+                                                                           <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechFluencyDisorder> ;
+                                                                  rdfs:comment "Speech disorder marked by repeated sounds, syllables, or words, affecting fluency and communication"@en ;
+                                                                  rdfs:label "Stuttering"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/Variability
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/Variability> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechError> ;
+                                                                   rdfs:comment "Inconsistent pronunciation of the same word or sound in different instances"@en ;
+                                                                   rdfs:label "Variability"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/VerbalApraxia
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/VerbalApraxia> rdf:type owl:NamedIndividual ,
+                                                                              <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechSoundDisorder> ;
+                                                                     rdfs:comment """also known as acquired apraxia of speech, verbal apraxia, or childhood apraxia of speech (CAS) when diagnosed in children—is a speech sound disorder. 
+CODE MB48A https://icd.who.int/browse/2024-01/mms/en#986651951"""@en ;
+                                                                     rdfs:label "VerbalApraxia"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/VocalDeletion
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/VocalDeletion> rdf:type owl:NamedIndividual ,
+                                                                              <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechError> ;
+                                                                     rdfs:comment "Omitting a vowel sound within a word"@en ;
+                                                                     rdfs:label "VocalDeletion"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/VocalDissimilation
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/VocalDissimilation> rdf:type owl:NamedIndividual ,
+                                                                                   <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechError> ;
+                                                                          rdfs:comment "Two similar sounds in a word become more distinct"@en ;
+                                                                          rdfs:label "VocalDissimilation"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/VocalHarmony
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/VocalHarmony> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechError> ;
+                                                                    rdfs:comment "Vowels in a word change to harmonize in features"@en ;
+                                                                    rdfs:label "VocalHarmony"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/WeakSyllableDeletion
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/WeakSyllableDeletion> rdf:type owl:NamedIndividual ,
+                                                                                     <http://www.semanticweb.org/ontologies/2024/7/talkidz/SpeechError> ;
+                                                                            rdfs:comment "Omitting the unstressed syllable in a word"@en ;
+                                                                            rdfs:label "WeakSyllableDeletion"@en .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/a
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/a> rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/ai
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/ai> rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/au
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/au> rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/b
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/b> rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/ontologies/2024/7/talkidz/d
+<http://www.semanticweb.org/ontologies/2024/7/talkidz/d> rdf:type owl:NamedIndividual .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
