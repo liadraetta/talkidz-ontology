@@ -10,12 +10,12 @@
 
 <https://w3id.org/tkz/> rdf:type owl:Ontology ;
                          owl:versionIRI : ;
-                         rdfs:label "talkidz"@it ;
+                         rdfs:label "tkz"@it ;
                          <http://purl.org/dc/elements/1.1/date> "2024-08-20T12:00:00"^^xsd:dateTime ;
-                         <http://www.semanticweb.org/nicol/ontologies/2024/7/talkidz/preferredNamespacePrefix> "tk" ;
-                         <http://purl.org/dc/elements/1.1/description> "Talkidz is a speech therapy ontology organizing concepts, treatments, and disorders, enhancing data sharing, research, and therapy development." ;
-                         <http://www.semanticweb.org/nicol/ontologies/2024/7/talkidz/preferredNamespaceUri> "talkidz" ;
-                         <http://purl.org/dc/elements/1.1/title> "Talkidz - Ontology for speech therapy consulting" .
+                         <https://w3id.org/tkz/preferredNamespacePrefix> "tkz" ;
+                         <http://purl.org/dc/elements/1.1/description> "-- is a speech therapy ontology organizing concepts, treatments, and disorders, enhancing data sharing, research, and therapy development." ;
+                         <https://w3id.org/tkz/preferredNamespaceUri> "tkz" ;
+                         <http://purl.org/dc/elements/1.1/title> "tkz - Ontology for speech therapy consulting" .
 
 #################################################################
 #    Annotation properties
