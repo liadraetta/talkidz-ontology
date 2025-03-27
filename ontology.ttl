@@ -1,4 +1,4 @@
-@prefix : <https://w3id.org/tkz/> .
+@prefix : <https://w3id.org/tkz/anonymous/> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -6,15 +6,15 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://w3id.org/tkz/> .
+@base <https://w3id.org/tkz/anonymous/> .
 
-<https://w3id.org/tkz/> rdf:type owl:Ontology ;
+<https://w3id.org/tkz/anonymous/> rdf:type owl:Ontology ;
                          owl:versionIRI : ;
                          rdfs:label "tkz"@it ;
                          <http://purl.org/dc/elements/1.1/date> "2024-08-20T12:00:00"^^xsd:dateTime ;
-                         <https://w3id.org/tkz/preferredNamespacePrefix> "tkz" ;
+                         <https://w3id.org/tkz/anonymous/preferredNamespacePrefix> "tkz" ;
                          <http://purl.org/dc/elements/1.1/description> "-- is a speech therapy ontology organizing concepts, treatments, and disorders, enhancing data sharing, research, and therapy development." ;
-                         <https://w3id.org/tkz/preferredNamespaceUri> "tkz" ;
+                         <https://w3id.org/tkz/anonymous/preferredNamespaceUri> "tkz" ;
                          <http://purl.org/dc/elements/1.1/title> "tkz - Ontology for speech therapy consulting" .
 
 #################################################################
@@ -37,20 +37,20 @@
 <http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
 
 
-###  https://w3id.org/tkz/preferredNamespacePrefix
-<https://w3id.org/tkz/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+###  https://w3id.org/tkz/anonymous/preferredNamespacePrefix
+<https://w3id.org/tkz/anonymous/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
 
 
-###  https://w3id.org/tkz/preferredNamespaceUri
-<https://w3id.org/tkz/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+###  https://w3id.org/tkz/anonymous/preferredNamespaceUri
+<https://w3id.org/tkz/anonymous/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
 
 
 #################################################################
 #    Datatypes
 #################################################################
 
-###  https://w3id.org/tkz/severity
-<https://w3id.org/tkz/severity> rdf:type rdfs:Datatype ;
+###  https://w3id.org/tkz/anonymous/severity
+<https://w3id.org/tkz/anonymous/severity> rdf:type rdfs:Datatype ;
                                  owl:equivalentClass [ rdf:type rdfs:Datatype ;
                                                        owl:oneOf [ rdf:type rdf:List ;
                                                                    rdf:first "Mild" ;
@@ -69,146 +69,146 @@
 #    Object Properties
 #################################################################
 
-###  https://w3id.org/tkz/affects
+###  https://w3id.org/tkz/anonymous/affects
 :affects rdf:type owl:ObjectProperty ;
-         rdfs:domain <https://w3id.org/tkz/SpeechOrLanguageDisorder> ;
+         rdfs:domain <https://w3id.org/tkz/anonymous/SpeechOrLanguageDisorder> ;
          rdfs:range :LinguisticArea ;
          rdfs:comment "The property \"Affects\" links a speech error to one o more specific linguistic area"@en ;
          rdfs:label "Affects"@en .
 
 
-###  https://w3id.org/tkz/aimedToResolve
-<https://w3id.org/tkz/aimedToResolve> rdf:type owl:ObjectProperty ;
-                                       owl:inverseOf <https://w3id.org/tkz/isTreatedWithTherapy> ;
-                                       rdfs:domain <https://w3id.org/tkz/SpeechTherapy> ;
-                                       rdfs:range <https://w3id.org/tkz/SpeechOrLanguageDisorder> ;
+###  https://w3id.org/tkz/anonymous/aimedToResolve
+<https://w3id.org/tkz/anonymous/aimedToResolve> rdf:type owl:ObjectProperty ;
+                                       owl:inverseOf <https://w3id.org/tkz/anonymous/isTreatedWithTherapy> ;
+                                       rdfs:domain <https://w3id.org/tkz/anonymous/SpeechTherapy> ;
+                                       rdfs:range <https://w3id.org/tkz/anonymous/SpeechOrLanguageDisorder> ;
                                        rdfs:comment "This property is useful to understand which disorder is aimed by a specific therapy." ;
                                        rdfs:label "AimedToResolve" .
 
 
-###  https://w3id.org/tkz/appliesTherapy
-<https://w3id.org/tkz/appliesTherapy> rdf:type owl:ObjectProperty ;
-                                       owl:inverseOf <https://w3id.org/tkz/therapyIsAppliedBy> ;
-                                       rdfs:domain <https://w3id.org/tkz/Therapist> ;
-                                       rdfs:range <https://w3id.org/tkz/SpeechTherapy> ;
+###  https://w3id.org/tkz/anonymous/appliesTherapy
+<https://w3id.org/tkz/anonymous/appliesTherapy> rdf:type owl:ObjectProperty ;
+                                       owl:inverseOf <https://w3id.org/tkz/anonymous/therapyIsAppliedBy> ;
+                                       rdfs:domain <https://w3id.org/tkz/anonymous/Therapist> ;
+                                       rdfs:range <https://w3id.org/tkz/anonymous/SpeechTherapy> ;
                                        rdfs:comment "This relation says what therapy is applied by the therapist"@en ;
                                        rdfs:label "AppliesTherapy"@en .
 
 
-###  https://w3id.org/tkz/followsTherapy
-<https://w3id.org/tkz/followsTherapy> rdf:type owl:ObjectProperty ;
-                                       owl:inverseOf <https://w3id.org/tkz/therapyIsFollowedBy> ;
+###  https://w3id.org/tkz/anonymous/followsTherapy
+<https://w3id.org/tkz/anonymous/followsTherapy> rdf:type owl:ObjectProperty ;
+                                       owl:inverseOf <https://w3id.org/tkz/anonymous/therapyIsFollowedBy> ;
                                        rdf:type owl:TransitiveProperty ;
-                                       rdfs:domain <https://w3id.org/tkz/Patient> ;
-                                       rdfs:range <https://w3id.org/tkz/SpeechTherapy> ;
+                                       rdfs:domain <https://w3id.org/tkz/anonymous/Patient> ;
+                                       rdfs:range <https://w3id.org/tkz/anonymous/SpeechTherapy> ;
                                        rdfs:comment "Maps a patient to one or more specific therapy he/she is following."@en ;
                                        rdfs:label "FollowsTherapy"@en .
 
 
-###  https://w3id.org/tkz/hasSeverity
-<https://w3id.org/tkz/hasSeverity> rdf:type owl:ObjectProperty ,
+###  https://w3id.org/tkz/anonymous/hasSeverity
+<https://w3id.org/tkz/anonymous/hasSeverity> rdf:type owl:ObjectProperty ,
                                              owl:FunctionalProperty ;
-                                    rdfs:domain <https://w3id.org/tkz/SpeechOrLanguageDisorder> ;
-                                    rdfs:range <https://w3id.org/tkz/Severity> ;
+                                    rdfs:domain <https://w3id.org/tkz/anonymous/SpeechOrLanguageDisorder> ;
+                                    rdfs:range <https://w3id.org/tkz/anonymous/Severity> ;
                                     rdfs:comment "Relation for general patient disorder." ;
                                     rdfs:label "HasSeverity" .
 
 
-###  https://w3id.org/tkz/inChargeOf
-<https://w3id.org/tkz/inChargeOf> rdf:type owl:ObjectProperty ;
-                                   owl:inverseOf <https://w3id.org/tkz/underResponsibilityOf> ;
-                                   rdfs:domain <https://w3id.org/tkz/AdultInCharge> ;
-                                   rdfs:range <https://w3id.org/tkz/Patient> ;
+###  https://w3id.org/tkz/anonymous/inChargeOf
+<https://w3id.org/tkz/anonymous/inChargeOf> rdf:type owl:ObjectProperty ;
+                                   owl:inverseOf <https://w3id.org/tkz/anonymous/underResponsibilityOf> ;
+                                   rdfs:domain <https://w3id.org/tkz/anonymous/AdultInCharge> ;
+                                   rdfs:range <https://w3id.org/tkz/anonymous/Patient> ;
                                    rdfs:comment "The adult responsible for the infant patient."@en ;
                                    rdfs:label "InChargeOf"@en .
 
 
-###  https://w3id.org/tkz/isBeingTreatedBy
-<https://w3id.org/tkz/isBeingTreatedBy> rdf:type owl:ObjectProperty ;
-                                         owl:inverseOf <https://w3id.org/tkz/isTreating> ;
-                                         rdfs:domain <https://w3id.org/tkz/Patient> ;
-                                         rdfs:range <https://w3id.org/tkz/Therapist> ;
+###  https://w3id.org/tkz/anonymous/isBeingTreatedBy
+<https://w3id.org/tkz/anonymous/isBeingTreatedBy> rdf:type owl:ObjectProperty ;
+                                         owl:inverseOf <https://w3id.org/tkz/anonymous/isTreating> ;
+                                         rdfs:domain <https://w3id.org/tkz/anonymous/Patient> ;
+                                         rdfs:range <https://w3id.org/tkz/anonymous/Therapist> ;
                                          rdfs:comment "Maps a patient with one or more therapists."@en ;
                                          rdfs:label "IsBeingTreatedBy"@en .
 
 
-###  https://w3id.org/tkz/isExhibiting
-<https://w3id.org/tkz/isExhibiting> rdf:type owl:ObjectProperty ,
+###  https://w3id.org/tkz/anonymous/isExhibiting
+<https://w3id.org/tkz/anonymous/isExhibiting> rdf:type owl:ObjectProperty ,
                                               owl:TransitiveProperty ;
-                                     rdfs:domain <https://w3id.org/tkz/Patient> ;
-                                     rdfs:range <https://w3id.org/tkz/SpeechOrLanguageDisorder> ;
+                                     rdfs:domain <https://w3id.org/tkz/anonymous/Patient> ;
+                                     rdfs:range <https://w3id.org/tkz/anonymous/SpeechOrLanguageDisorder> ;
                                      rdfs:comment "Maps a patient with one or more speech disorders."@en ;
                                      rdfs:label "IsExhibiting"@en .
 
 
-###  https://w3id.org/tkz/isLegalGuardianOf
-<https://w3id.org/tkz/isLegalGuardianOf> rdf:type owl:ObjectProperty ;
-                                          rdfs:subPropertyOf <https://w3id.org/tkz/inChargeOf> .
+###  https://w3id.org/tkz/anonymous/isLegalGuardianOf
+<https://w3id.org/tkz/anonymous/isLegalGuardianOf> rdf:type owl:ObjectProperty ;
+                                          rdfs:subPropertyOf <https://w3id.org/tkz/anonymous/inChargeOf> .
 
 
-###  https://w3id.org/tkz/isParentOf
-<https://w3id.org/tkz/isParentOf> rdf:type owl:ObjectProperty ;
-                                   rdfs:subPropertyOf <https://w3id.org/tkz/inChargeOf> ;
-                                   rdfs:range <https://w3id.org/tkz/Patient> ;
+###  https://w3id.org/tkz/anonymous/isParentOf
+<https://w3id.org/tkz/anonymous/isParentOf> rdf:type owl:ObjectProperty ;
+                                   rdfs:subPropertyOf <https://w3id.org/tkz/anonymous/inChargeOf> ;
+                                   rdfs:range <https://w3id.org/tkz/anonymous/Patient> ;
                                    rdfs:comment "mother-patient relation." ;
                                    rdfs:label "IsMotherOf" .
 
 
-###  https://w3id.org/tkz/isTreatedWithTherapy
-<https://w3id.org/tkz/isTreatedWithTherapy> rdf:type owl:ObjectProperty ;
-                                             rdfs:domain <https://w3id.org/tkz/SpeechOrLanguageDisorder> ;
-                                             rdfs:range <https://w3id.org/tkz/SpeechTherapy> ;
+###  https://w3id.org/tkz/anonymous/isTreatedWithTherapy
+<https://w3id.org/tkz/anonymous/isTreatedWithTherapy> rdf:type owl:ObjectProperty ;
+                                             rdfs:domain <https://w3id.org/tkz/anonymous/SpeechOrLanguageDisorder> ;
+                                             rdfs:range <https://w3id.org/tkz/anonymous/SpeechTherapy> ;
                                              rdfs:comment "The therapy suggested for a specific disorder." ;
                                              rdfs:label "IsTreatedWithTherapy"@en .
 
 
-###  https://w3id.org/tkz/isTreating
-<https://w3id.org/tkz/isTreating> rdf:type owl:ObjectProperty ;
-                                   rdfs:domain <https://w3id.org/tkz/Therapist> ;
-                                   rdfs:range <https://w3id.org/tkz/Patient> ;
-                                   owl:propertyChainAxiom ( <https://w3id.org/tkz/appliesTherapy>
-                                                            <https://w3id.org/tkz/therapyIsFollowedBy>
+###  https://w3id.org/tkz/anonymous/isTreating
+<https://w3id.org/tkz/anonymous/isTreating> rdf:type owl:ObjectProperty ;
+                                   rdfs:domain <https://w3id.org/tkz/anonymous/Therapist> ;
+                                   rdfs:range <https://w3id.org/tkz/anonymous/Patient> ;
+                                   owl:propertyChainAxiom ( <https://w3id.org/tkz/anonymous/appliesTherapy>
+                                                            <https://w3id.org/tkz/anonymous/therapyIsFollowedBy>
                                                           ) ;
                                    rdfs:comment "The relation between therapist and patient."@en ;
                                    rdfs:label "IsTreating"@en .
 
 
-###  https://w3id.org/tkz/makesSpeechError
-<https://w3id.org/tkz/makesSpeechError> rdf:type owl:ObjectProperty ;
-                                         rdfs:domain <https://w3id.org/tkz/Patient> ;
-                                         rdfs:range <https://w3id.org/tkz/SpeechError> ;
+###  https://w3id.org/tkz/anonymous/makesSpeechError
+<https://w3id.org/tkz/anonymous/makesSpeechError> rdf:type owl:ObjectProperty ;
+                                         rdfs:domain <https://w3id.org/tkz/anonymous/Patient> ;
+                                         rdfs:range <https://w3id.org/tkz/anonymous/SpeechError> ;
                                          rdfs:comment "Property needed to understand wich speech error is made by a patient"@en ;
                                          rdfs:label "Makes speech errors"@en .
 
 
-###  https://w3id.org/tkz/therapyIsAppliedBy
-<https://w3id.org/tkz/therapyIsAppliedBy> rdf:type owl:ObjectProperty ;
-                                           rdfs:domain <https://w3id.org/tkz/SpeechTherapy> ;
-                                           rdfs:range <https://w3id.org/tkz/Therapist> ;
+###  https://w3id.org/tkz/anonymous/therapyIsAppliedBy
+<https://w3id.org/tkz/anonymous/therapyIsAppliedBy> rdf:type owl:ObjectProperty ;
+                                           rdfs:domain <https://w3id.org/tkz/anonymous/SpeechTherapy> ;
+                                           rdfs:range <https://w3id.org/tkz/anonymous/Therapist> ;
                                            rdfs:comment "This property is needed to understand which therapist is applying a specific therapy." ;
                                            rdfs:label "TherapyIsAppliedBy" .
 
 
-###  https://w3id.org/tkz/therapyIsFollowedBy
-<https://w3id.org/tkz/therapyIsFollowedBy> rdf:type owl:ObjectProperty ;
-                                            rdfs:domain <https://w3id.org/tkz/SpeechTherapy> ;
-                                            rdfs:range <https://w3id.org/tkz/Patient> ;
+###  https://w3id.org/tkz/anonymous/therapyIsFollowedBy
+<https://w3id.org/tkz/anonymous/therapyIsFollowedBy> rdf:type owl:ObjectProperty ;
+                                            rdfs:domain <https://w3id.org/tkz/anonymous/SpeechTherapy> ;
+                                            rdfs:range <https://w3id.org/tkz/anonymous/Patient> ;
                                             rdfs:comment "This property maps a therapy to a patient." ;
                                             rdfs:label "TherapyIsFollowedBy" .
 
 
-###  https://w3id.org/tkz/treatsDisorder
-<https://w3id.org/tkz/treatsDisorder> rdf:type owl:ObjectProperty ;
-                                       rdfs:domain <https://w3id.org/tkz/Therapist> ;
-                                       rdfs:range <https://w3id.org/tkz/SpeechOrLanguageDisorder> ;
+###  https://w3id.org/tkz/anonymous/treatsDisorder
+<https://w3id.org/tkz/anonymous/treatsDisorder> rdf:type owl:ObjectProperty ;
+                                       rdfs:domain <https://w3id.org/tkz/anonymous/Therapist> ;
+                                       rdfs:range <https://w3id.org/tkz/anonymous/SpeechOrLanguageDisorder> ;
                                        rdfs:comment "Maps a therapist over speech disorders he/she can treat."@en ;
                                        rdfs:label "TreatsDisorder"@en .
 
 
-###  https://w3id.org/tkz/underResponsibilityOf
-<https://w3id.org/tkz/underResponsibilityOf> rdf:type owl:ObjectProperty ;
-                                              rdfs:domain <https://w3id.org/tkz/Patient> ;
-                                              rdfs:range <https://w3id.org/tkz/AdultInCharge> ;
+###  https://w3id.org/tkz/anonymous/underResponsibilityOf
+<https://w3id.org/tkz/anonymous/underResponsibilityOf> rdf:type owl:ObjectProperty ;
+                                              rdfs:domain <https://w3id.org/tkz/anonymous/Patient> ;
+                                              rdfs:range <https://w3id.org/tkz/anonymous/AdultInCharge> ;
                                               rdfs:comment "Maps a patient with a responsible adult."@en ;
                                               rdfs:label "UnderResponsibilityOf"@en .
 
@@ -217,45 +217,45 @@
 #    Data properties
 #################################################################
 
-###  https://w3id.org/tkz/bilingual
-<https://w3id.org/tkz/bilingual> rdf:type owl:DatatypeProperty ;
+###  https://w3id.org/tkz/anonymous/bilingual
+<https://w3id.org/tkz/anonymous/bilingual> rdf:type owl:DatatypeProperty ;
                                   rdfs:subPropertyOf owl:topDataProperty ;
                                   rdfs:domain foaf:Person ;
                                   rdfs:range xsd:boolean .
 
 
-###  https://w3id.org/tkz/birthMonth
-<https://w3id.org/tkz/birthMonth> rdf:type owl:DatatypeProperty ;
-                                   rdfs:domain <https://w3id.org/tkz/Patient> .
+###  https://w3id.org/tkz/anonymous/birthMonth
+<https://w3id.org/tkz/anonymous/birthMonth> rdf:type owl:DatatypeProperty ;
+                                   rdfs:domain <https://w3id.org/tkz/anonymous/Patient> .
 
 
-###  https://w3id.org/tkz/birthYear
-<https://w3id.org/tkz/birthYear> rdf:type owl:DatatypeProperty ;
+###  https://w3id.org/tkz/anonymous/birthYear
+<https://w3id.org/tkz/anonymous/birthYear> rdf:type owl:DatatypeProperty ;
                                   rdfs:subPropertyOf owl:topDataProperty ;
-                                  rdfs:domain <https://w3id.org/tkz/Patient> .
+                                  rdfs:domain <https://w3id.org/tkz/anonymous/Patient> .
 
 
-###  https://w3id.org/tkz/therapyEndDate
-<https://w3id.org/tkz/therapyEndDate> rdf:type owl:DatatypeProperty ;
+###  https://w3id.org/tkz/anonymous/therapyEndDate
+<https://w3id.org/tkz/anonymous/therapyEndDate> rdf:type owl:DatatypeProperty ;
                                        rdfs:subPropertyOf owl:topDataProperty ;
-                                       rdfs:domain <https://w3id.org/tkz/SpeechTherapy> ;
+                                       rdfs:domain <https://w3id.org/tkz/anonymous/SpeechTherapy> ;
                                        rdfs:range xsd:dateTime ;
                                        rdfs:comment "Therapy start date."@en ;
                                        rdfs:label "TherapyStartDate"@en .
 
 
-###  https://w3id.org/tkz/therapyIsSuccessful
-<https://w3id.org/tkz/therapyIsSuccessful> rdf:type owl:DatatypeProperty ;
-                                            rdfs:domain <https://w3id.org/tkz/SpeechTherapy> ;
+###  https://w3id.org/tkz/anonymous/therapyIsSuccessful
+<https://w3id.org/tkz/anonymous/therapyIsSuccessful> rdf:type owl:DatatypeProperty ;
+                                            rdfs:domain <https://w3id.org/tkz/anonymous/SpeechTherapy> ;
                                             rdfs:range xsd:boolean ;
                                             rdfs:comment "Qualitatively reports the outcome of a therapy, once finished." ;
                                             rdfs:label "TherapyIsSuccessful" .
 
 
-###  https://w3id.org/tkz/therapyStartDate
-<https://w3id.org/tkz/therapyStartDate> rdf:type owl:DatatypeProperty ;
+###  https://w3id.org/tkz/anonymous/therapyStartDate
+<https://w3id.org/tkz/anonymous/therapyStartDate> rdf:type owl:DatatypeProperty ;
                                          rdfs:subPropertyOf owl:topDataProperty ;
-                                         rdfs:domain <https://w3id.org/tkz/SpeechTherapy> ;
+                                         rdfs:domain <https://w3id.org/tkz/anonymous/SpeechTherapy> ;
                                          rdfs:range xsd:dateTime ;
                                          rdfs:comment "Therapy end date"@en ;
                                          rdfs:label "TherapyEndDate"@en .
@@ -271,156 +271,156 @@ foaf:Person rdf:type owl:Class ;
             rdfs:label "Person"@en .
 
 
-###  https://w3id.org/tkz/LinguisticArea
+###  https://w3id.org/tkz/anonymous/LinguisticArea
 :LinguisticArea rdf:type owl:Class ;
                 rdfs:comment "Class for the description of linguistic areas that may concern speech errors, such as the lexical-semantic, morphosyntactic, and phonological areas."@en ;
                 rdfs:label "Linguistic area"@en .
 
 
-###  https://w3id.org/tkz/AdultInCharge
-<https://w3id.org/tkz/AdultInCharge> rdf:type owl:Class ;
+###  https://w3id.org/tkz/anonymous/AdultInCharge
+<https://w3id.org/tkz/anonymous/AdultInCharge> rdf:type owl:Class ;
                                       owl:equivalentClass [ rdf:type owl:Restriction ;
-                                                            owl:onProperty <https://w3id.org/tkz/inChargeOf> ;
+                                                            owl:onProperty <https://w3id.org/tkz/anonymous/inChargeOf> ;
                                                             owl:someValuesFrom foaf:Person
                                                           ] ;
                                       rdfs:subClassOf foaf:Person ;
-                                      owl:disjointWith <https://w3id.org/tkz/Patient> ;
+                                      owl:disjointWith <https://w3id.org/tkz/anonymous/Patient> ;
                                       rdfs:comment "The adult being in charge of the patient, which must be over age of 18."@en ;
                                       rdfs:label "AdultInCharge"@en .
 
 
-###  https://w3id.org/tkz/CognitiveLinguisticTherapy
-<https://w3id.org/tkz/CognitiveLinguisticTherapy> rdf:type owl:Class ;
-                                                   rdfs:subClassOf <https://w3id.org/tkz/SpeechTherapy> ;
+###  https://w3id.org/tkz/anonymous/CognitiveLinguisticTherapy
+<https://w3id.org/tkz/anonymous/CognitiveLinguisticTherapy> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <https://w3id.org/tkz/anonymous/SpeechTherapy> ;
                                                    rdfs:comment "Cognitive-Linguistic Therapy addresses communication difficulties caused by cognitive impairment. It refers to therapy that targets cognitive functions such as attention, memory, and problem-solving skills."@en ;
                                                    rdfs:label "Cognitive Linguistic Therapy"@en .
 
 
-###  https://w3id.org/tkz/DevelopmentalLanguageDisorder
-<https://w3id.org/tkz/DevelopmentalLanguageDisorder> rdf:type owl:Class ;
-                                                      rdfs:subClassOf <https://w3id.org/tkz/SpeechOrLanguageDisorder> ;
+###  https://w3id.org/tkz/anonymous/DevelopmentalLanguageDisorder
+<https://w3id.org/tkz/anonymous/DevelopmentalLanguageDisorder> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <https://w3id.org/tkz/anonymous/SpeechOrLanguageDisorder> ;
                                                       rdfs:comment """Developmental language disorder is characterised by persistent deficits in the acquisition, understanding, production or use of language (spoken or signed), that arise during the developmental period, typically during early childhood, and cause significant limitations in the individual’s ability to communicate. The individual’s ability to understand, produce or use language is markedly below what would be expected given the individual’s age. The language deficits are not explained by another neurodevelopmental disorder or a sensory impairment or neurological condition, including the effects of brain injury or infection. 
 CODE 6A01.2 https://icd.who.int/browse/2024-01/mms/en#862918022"""@en ;
                                                       rdfs:label "DevelopmentalLanguageDisorder"@en .
 
 
-###  https://w3id.org/tkz/IndirectTherapy
-<https://w3id.org/tkz/IndirectTherapy> rdf:type owl:Class ;
-                                        rdfs:subClassOf <https://w3id.org/tkz/SpeechTherapy> ;
+###  https://w3id.org/tkz/anonymous/IndirectTherapy
+<https://w3id.org/tkz/anonymous/IndirectTherapy> rdf:type owl:Class ;
+                                        rdfs:subClassOf <https://w3id.org/tkz/anonymous/SpeechTherapy> ;
                                         rdfs:comment "Indirect therapy refers to interventions that support language development through modifications in the environment, caregiver training, or mediated interactions rather than direct patient engagement"@en ;
                                         rdfs:label "Indirect therapy"@en .
 
 
-###  https://w3id.org/tkz/LegalGuardian
-<https://w3id.org/tkz/LegalGuardian> rdf:type owl:Class ;
+###  https://w3id.org/tkz/anonymous/LegalGuardian
+<https://w3id.org/tkz/anonymous/LegalGuardian> rdf:type owl:Class ;
                                       owl:equivalentClass [ rdf:type owl:Restriction ;
-                                                            owl:onProperty <https://w3id.org/tkz/isLegalGuardianOf> ;
-                                                            owl:someValuesFrom <https://w3id.org/tkz/Patient>
+                                                            owl:onProperty <https://w3id.org/tkz/anonymous/isLegalGuardianOf> ;
+                                                            owl:someValuesFrom <https://w3id.org/tkz/anonymous/Patient>
                                                           ] ;
-                                      rdfs:subClassOf <https://w3id.org/tkz/AdultInCharge> ;
+                                      rdfs:subClassOf <https://w3id.org/tkz/anonymous/AdultInCharge> ;
                                       rdfs:comment "A person who plays the role of Legal guardian"@en ;
                                       rdfs:label "Legal Guardian"@en .
 
 
-###  https://w3id.org/tkz/MotorTherapy
-<https://w3id.org/tkz/MotorTherapy> rdf:type owl:Class ;
-                                     rdfs:subClassOf <https://w3id.org/tkz/SpeechTherapy> ;
+###  https://w3id.org/tkz/anonymous/MotorTherapy
+<https://w3id.org/tkz/anonymous/MotorTherapy> rdf:type owl:Class ;
+                                     rdfs:subClassOf <https://w3id.org/tkz/anonymous/SpeechTherapy> ;
                                      rdfs:comment "The class motor therapy refers to interventions that improve motor skills and coordination to support physical and cognitive functions, often used in rehabilitation and developmental therapy."@en ;
                                      rdfs:label "Motor Therapy"@en .
 
 
-###  https://w3id.org/tkz/Parent
-<https://w3id.org/tkz/Parent> rdf:type owl:Class ;
+###  https://w3id.org/tkz/anonymous/Parent
+<https://w3id.org/tkz/anonymous/Parent> rdf:type owl:Class ;
                                owl:equivalentClass [ rdf:type owl:Restriction ;
-                                                     owl:onProperty <https://w3id.org/tkz/isParentOf> ;
-                                                     owl:someValuesFrom <https://w3id.org/tkz/Patient>
+                                                     owl:onProperty <https://w3id.org/tkz/anonymous/isParentOf> ;
+                                                     owl:someValuesFrom <https://w3id.org/tkz/anonymous/Patient>
                                                    ] ;
-                               rdfs:subClassOf <https://w3id.org/tkz/AdultInCharge> ;
+                               rdfs:subClassOf <https://w3id.org/tkz/anonymous/AdultInCharge> ;
                                rdfs:comment "Parent of the patient in charge"@en ;
                                rdfs:label "Parent"@en .
 
 
-###  https://w3id.org/tkz/Patient
-<https://w3id.org/tkz/Patient> rdf:type owl:Class ;
+###  https://w3id.org/tkz/anonymous/Patient
+<https://w3id.org/tkz/anonymous/Patient> rdf:type owl:Class ;
                                 rdfs:subClassOf foaf:Person ,
                                                 [ rdf:type owl:Restriction ;
-                                                  owl:onProperty <https://w3id.org/tkz/underResponsibilityOf> ;
+                                                  owl:onProperty <https://w3id.org/tkz/anonymous/underResponsibilityOf> ;
                                                   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                  owl:onClass <https://w3id.org/tkz/AdultInCharge>
+                                                  owl:onClass <https://w3id.org/tkz/anonymous/AdultInCharge>
                                                 ] ;
-                                owl:disjointWith <https://w3id.org/tkz/Therapist> ;
+                                owl:disjointWith <https://w3id.org/tkz/anonymous/Therapist> ;
                                 rdfs:comment "Patient class, which must have a birthday associated to each instance."@en ;
                                 rdfs:label "Patient"@en .
 
 
-###  https://w3id.org/tkz/Severity
-<https://w3id.org/tkz/Severity> rdf:type owl:Class ;
+###  https://w3id.org/tkz/anonymous/Severity
+<https://w3id.org/tkz/anonymous/Severity> rdf:type owl:Class ;
                                  owl:equivalentClass [ rdf:type owl:Class ;
-                                                       owl:oneOf ( <https://w3id.org/tkz/Mild>
-                                                                   <https://w3id.org/tkz/NearlyAbsent>
-                                                                   <https://w3id.org/tkz/Severe>
+                                                       owl:oneOf ( <https://w3id.org/tkz/anonymous/Mild>
+                                                                   <https://w3id.org/tkz/anonymous/NearlyAbsent>
+                                                                   <https://w3id.org/tkz/anonymous/Severe>
                                                                  )
                                                      ] ;
                                  rdfs:comment "The Class indetify the severity of a certain language disease such as \"Mild\", \"nearly Absent\" or \"Sever\""@en ;
                                  rdfs:label "Severity" .
 
 
-###  https://w3id.org/tkz/SpeechError
-<https://w3id.org/tkz/SpeechError> rdf:type owl:Class ;
+###  https://w3id.org/tkz/anonymous/SpeechError
+<https://w3id.org/tkz/anonymous/SpeechError> rdf:type owl:Class ;
                                     rdfs:comment "Class for the specific mispronunciaton encountered by the patient and registered by the therapist. Diagnosis in DOLCE ontology"@en ;
                                     rdfs:label "SpeechError"@en .
 
 
-###  https://w3id.org/tkz/SpeechFluencyDisorder
-<https://w3id.org/tkz/SpeechFluencyDisorder> rdf:type owl:Class ;
-                                              rdfs:subClassOf <https://w3id.org/tkz/SpeechOrLanguageDisorder> ;
+###  https://w3id.org/tkz/anonymous/SpeechFluencyDisorder
+<https://w3id.org/tkz/anonymous/SpeechFluencyDisorder> rdf:type owl:Class ;
+                                              rdfs:subClassOf <https://w3id.org/tkz/anonymous/SpeechOrLanguageDisorder> ;
                                               rdfs:comment """Developmental speech fluency disorder is characterised by frequent or pervasive disruption of the normal rhythmic flow and rate of speech characterised by repetitions and prolongations in sounds, syllables, words, and phrases, as well as blocking and word avoidance or substitutions. The speech dysfluency is persistent over time. The onset of speech dysfluency occurs during the developmental period and speech fluency is markedly below what would be expected for age. Speech dysfluency results in significant impairment in social communication, personal, family, social, educational, occupational or other important areas of functioning. The speech dysfluency is not better accounted for by a Disorder of Intellectual Development, a Disease of the Nervous System, a sensory impairment, or a structural abnormality, or other speech or voice disorder. 
 CODE 6A01.1 https://icd.who.int/browse/2024-01/mms/en#654956298""" ;
                                               rdfs:label "SpeechFluencyDisorder"@en .
 
 
-###  https://w3id.org/tkz/SpeechOrLanguageDisorder
-<https://w3id.org/tkz/SpeechOrLanguageDisorder> rdf:type owl:Class ;
+###  https://w3id.org/tkz/anonymous/SpeechOrLanguageDisorder
+<https://w3id.org/tkz/anonymous/SpeechOrLanguageDisorder> rdf:type owl:Class ;
                                                  rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                                   owl:onProperty <https://w3id.org/tkz/isTreatedWithTherapy> ;
-                                                                   owl:someValuesFrom <https://w3id.org/tkz/SpeechTherapy>
+                                                                   owl:onProperty <https://w3id.org/tkz/anonymous/isTreatedWithTherapy> ;
+                                                                   owl:someValuesFrom <https://w3id.org/tkz/anonymous/SpeechTherapy>
                                                                  ] ;
                                                  rdfs:comment "Developmental Speech or Language Disorders are characterized by difficulties in understanding or producing speech and language or in using language in context for the purposes of communication. CODE 6A01 https://icd.who.int/browse/2024-01/mms/en#33269655"@en ;
                                                  rdfs:label "SpeechOrLanagugeDisorder"@en .
 
 
-###  https://w3id.org/tkz/SpeechSoundDisorder
-<https://w3id.org/tkz/SpeechSoundDisorder> rdf:type owl:Class ;
-                                            rdfs:subClassOf <https://w3id.org/tkz/SpeechOrLanguageDisorder> ;
+###  https://w3id.org/tkz/anonymous/SpeechSoundDisorder
+<https://w3id.org/tkz/anonymous/SpeechSoundDisorder> rdf:type owl:Class ;
+                                            rdfs:subClassOf <https://w3id.org/tkz/anonymous/SpeechOrLanguageDisorder> ;
                                             rdfs:comment "Developmental speech sound disorder is characterised by difficulties in the acquisition, production and perception of speech that result in errors of pronunciation, either in number or types of speech errors made or the overall quality of speech production, that are outside the limits of normal variation expected for age and level of intellectual functioning and result in reduced intelligibility and significantly affect communication. The errors in pronunciation arise during the early developmental period and cannot be explained by social, cultural, and other environmental variations (e.g., regional dialects). The speech errors are not fully explained by a hearing impairment or a structural or neurological abnormality. CODE 6A01.0 https://icd.who.int/browse/2024-01/mms/en#551966778" ;
                                             rdfs:label "SpeechSoundDisorder"@en .
 
 
-###  https://w3id.org/tkz/SpeechTherapy
-<https://w3id.org/tkz/SpeechTherapy> rdf:type owl:Class ;
+###  https://w3id.org/tkz/anonymous/SpeechTherapy
+<https://w3id.org/tkz/anonymous/SpeechTherapy> rdf:type owl:Class ;
                                       rdfs:comment "Speech therapy is treatment that improves your ability to talk and use other language skills.  Plan in DOLCE ontology"@en ;
                                       rdfs:label "SpeechTherapy"@en .
 
 
-###  https://w3id.org/tkz/StructuralError
-<https://w3id.org/tkz/StructuralError> rdf:type owl:Class ;
-                                        rdfs:subClassOf <https://w3id.org/tkz/SpeechError> ;
+###  https://w3id.org/tkz/anonymous/StructuralError
+<https://w3id.org/tkz/anonymous/StructuralError> rdf:type owl:Class ;
+                                        rdfs:subClassOf <https://w3id.org/tkz/anonymous/SpeechError> ;
                                         rdfs:comment "Structural errors affect the syllable or phonological structure of a word. These processes typically involve the modification of how sounds are arranged or reduced within a word. Examples include deleting whole syllables or simplifying consonant clusters. Structural errors often impact the overall form of a word without necessarily changing its individual sounds." ;
                                         rdfs:label "Structural Error" .
 
 
-###  https://w3id.org/tkz/SystemError
-<https://w3id.org/tkz/SystemError> rdf:type owl:Class ;
-                                    rdfs:subClassOf <https://w3id.org/tkz/SpeechError> ;
+###  https://w3id.org/tkz/anonymous/SystemError
+<https://w3id.org/tkz/anonymous/SystemError> rdf:type owl:Class ;
+                                    rdfs:subClassOf <https://w3id.org/tkz/anonymous/SpeechError> ;
                                     rdfs:comment "System errors involve changes in the properties of individual phonemes and are often more systematic, affecting whole categories of sounds. These errors may involve shifting between different manners or places of articulation, as well as altering voicing. System errors are more about how specific sounds (consonants or vowels) behave within the phonological system." ;
                                     rdfs:label "System Error" .
 
 
-###  https://w3id.org/tkz/Therapist
-<https://w3id.org/tkz/Therapist> rdf:type owl:Class ;
+###  https://w3id.org/tkz/anonymous/Therapist
+<https://w3id.org/tkz/anonymous/Therapist> rdf:type owl:Class ;
                                   owl:equivalentClass [ rdf:type owl:Restriction ;
-                                                        owl:onProperty <https://w3id.org/tkz/isTreating> ;
-                                                        owl:someValuesFrom <https://w3id.org/tkz/Patient>
+                                                        owl:onProperty <https://w3id.org/tkz/anonymous/isTreating> ;
+                                                        owl:someValuesFrom <https://w3id.org/tkz/anonymous/Patient>
                                                       ] ;
                                   rdfs:subClassOf foaf:Person ;
                                   rdfs:comment "Either a speech therapist or any kind of therapist that can diagnose and treat speech disorders."@en ;
@@ -431,299 +431,299 @@ CODE 6A01.1 https://icd.who.int/browse/2024-01/mms/en#654956298""" ;
 #    Individuals
 #################################################################
 
-###  https://w3id.org/tkz/Affrication
-<https://w3id.org/tkz/Affrication> rdf:type owl:NamedIndividual ,
-                                             <https://w3id.org/tkz/SpeechError> ;
+###  https://w3id.org/tkz/anonymous/Affrication
+<https://w3id.org/tkz/anonymous/Affrication> rdf:type owl:NamedIndividual ,
+                                             <https://w3id.org/tkz/anonymous/SpeechError> ;
                                     rdfs:comment "Replacing a fricative with an affricate"@en ;
                                     rdfs:label "Affrication"@en .
 
 
-###  https://w3id.org/tkz/Aphasia
-<https://w3id.org/tkz/Aphasia> rdf:type owl:NamedIndividual ,
-                                         <https://w3id.org/tkz/DevelopmentalLanguageDisorder> ;
+###  https://w3id.org/tkz/anonymous/Aphasia
+<https://w3id.org/tkz/anonymous/Aphasia> rdf:type owl:NamedIndividual ,
+                                         <https://w3id.org/tkz/anonymous/DevelopmentalLanguageDisorder> ;
                                 rdfs:comment "Language disorder affecting speaking, understanding, reading, or writing, often due to brain injury"@en ;
                                 rdfs:label "Aphasia"@en .
 
 
-###  https://w3id.org/tkz/Cluttering
-<https://w3id.org/tkz/Cluttering> rdf:type owl:NamedIndividual ,
-                                            <https://w3id.org/tkz/SpeechFluencyDisorder> ;
+###  https://w3id.org/tkz/anonymous/Cluttering
+<https://w3id.org/tkz/anonymous/Cluttering> rdf:type owl:NamedIndividual ,
+                                            <https://w3id.org/tkz/anonymous/SpeechFluencyDisorder> ;
                                    rdfs:comment "A speech disorder characterized by rapid, irregular speech that is difficult to understand"@en ;
                                    rdfs:label "Cluttering"@en .
 
 
-###  https://w3id.org/tkz/ConsonantDeletion
-<https://w3id.org/tkz/ConsonantDeletion> rdf:type owl:NamedIndividual ,
-                                                   <https://w3id.org/tkz/SpeechError> ;
+###  https://w3id.org/tkz/anonymous/ConsonantDeletion
+<https://w3id.org/tkz/anonymous/ConsonantDeletion> rdf:type owl:NamedIndividual ,
+                                                   <https://w3id.org/tkz/anonymous/SpeechError> ;
                                           rdfs:comment "Omitting a consonant in a word, often at the beginning or end"@en ;
                                           rdfs:label "ConsonantalDeletion"@en .
 
 
-###  https://w3id.org/tkz/ConsonantalHarmony
-<https://w3id.org/tkz/ConsonantalHarmony> rdf:type owl:NamedIndividual ,
-                                                    <https://w3id.org/tkz/SpeechError> ;
+###  https://w3id.org/tkz/anonymous/ConsonantalHarmony
+<https://w3id.org/tkz/anonymous/ConsonantalHarmony> rdf:type owl:NamedIndividual ,
+                                                    <https://w3id.org/tkz/anonymous/SpeechError> ;
                                            rdfs:comment "One consonant in a word changes to be more like another"@en ;
                                            rdfs:label "ConsonantalHarmony"@en .
 
 
-###  https://w3id.org/tkz/Depalatalization
-<https://w3id.org/tkz/Depalatalization> rdf:type owl:NamedIndividual ,
-                                                  <https://w3id.org/tkz/SpeechError> ;
+###  https://w3id.org/tkz/anonymous/Depalatalization
+<https://w3id.org/tkz/anonymous/Depalatalization> rdf:type owl:NamedIndividual ,
+                                                  <https://w3id.org/tkz/anonymous/SpeechError> ;
                                          rdfs:comment "Replacing a palatal sound with a non-palatal one"@en ;
                                          rdfs:label "Depalatalization"@en .
 
 
-###  https://w3id.org/tkz/Desonorization
-<https://w3id.org/tkz/Desonorization> rdf:type owl:NamedIndividual ,
-                                                <https://w3id.org/tkz/SpeechError> ;
+###  https://w3id.org/tkz/anonymous/Desonorization
+<https://w3id.org/tkz/anonymous/Desonorization> rdf:type owl:NamedIndividual ,
+                                                <https://w3id.org/tkz/anonymous/SpeechError> ;
                                        rdfs:comment "Substituting a voiced sound with its voiceless counterpart"@en ;
                                        rdfs:label "Desonorization"@en .
 
 
-###  https://w3id.org/tkz/DipthongReduction
-<https://w3id.org/tkz/DipthongReduction> rdf:type owl:NamedIndividual ,
-                                                   <https://w3id.org/tkz/SpeechError> ;
+###  https://w3id.org/tkz/anonymous/DipthongReduction
+<https://w3id.org/tkz/anonymous/DipthongReduction> rdf:type owl:NamedIndividual ,
+                                                   <https://w3id.org/tkz/anonymous/SpeechError> ;
                                           rdfs:comment "Simplifying a diphthong to a single vowel"@en ;
                                           rdfs:label "DipthongReduction"@en .
 
 
-###  https://w3id.org/tkz/Distortion
-<https://w3id.org/tkz/Distortion> rdf:type owl:NamedIndividual ,
-                                            <https://w3id.org/tkz/SpeechError> ;
+###  https://w3id.org/tkz/anonymous/Distortion
+<https://w3id.org/tkz/anonymous/Distortion> rdf:type owl:NamedIndividual ,
+                                            <https://w3id.org/tkz/anonymous/SpeechError> ;
                                    rdfs:comment "Producing unclear or altered speech sounds, often causing slurred or imprecise pronunciation"@en ;
                                    rdfs:label "Distortion"@en .
 
 
-###  https://w3id.org/tkz/Dysarthria
-<https://w3id.org/tkz/Dysarthria> rdf:type owl:NamedIndividual ,
-                                            <https://w3id.org/tkz/SpeechSoundDisorder> ;
+###  https://w3id.org/tkz/anonymous/Dysarthria
+<https://w3id.org/tkz/anonymous/Dysarthria> rdf:type owl:NamedIndividual ,
+                                            <https://w3id.org/tkz/anonymous/SpeechSoundDisorder> ;
                                    rdfs:comment "Weak or slurred speech due to impaired muscle control, often caused by neurological damage"@en ;
                                    rdfs:label "Dysarthria"@en .
 
 
-###  https://w3id.org/tkz/Dyslalia
-<https://w3id.org/tkz/Dyslalia> rdf:type owl:NamedIndividual ,
-                                          <https://w3id.org/tkz/SpeechFluencyDisorder> ;
+###  https://w3id.org/tkz/anonymous/Dyslalia
+<https://w3id.org/tkz/anonymous/Dyslalia> rdf:type owl:NamedIndividual ,
+                                          <https://w3id.org/tkz/anonymous/SpeechFluencyDisorder> ;
                                  rdfs:comment "Difficulty in pronouncing certain sounds or words, often due to developmental or structural issues"@en ;
                                  rdfs:label "Dyslalia"@en .
 
 
-###  https://w3id.org/tkz/Dyslexia
-<https://w3id.org/tkz/Dyslexia> rdf:type owl:NamedIndividual ,
-                                          <https://w3id.org/tkz/SpeechFluencyDisorder> ;
+###  https://w3id.org/tkz/anonymous/Dyslexia
+<https://w3id.org/tkz/anonymous/Dyslexia> rdf:type owl:NamedIndividual ,
+                                          <https://w3id.org/tkz/anonymous/SpeechFluencyDisorder> ;
                                  rdfs:comment "Learning disorder marked by difficulty reading, spelling, or interpreting letters and words"@en ;
                                  rdfs:label "Dyslexia"@en .
 
 
-###  https://w3id.org/tkz/Dysphagia
-<https://w3id.org/tkz/Dysphagia> rdf:type owl:NamedIndividual ,
-                                           <https://w3id.org/tkz/SpeechOrLanguageDisorder> ;
+###  https://w3id.org/tkz/anonymous/Dysphagia
+<https://w3id.org/tkz/anonymous/Dysphagia> rdf:type owl:NamedIndividual ,
+                                           <https://w3id.org/tkz/anonymous/SpeechOrLanguageDisorder> ;
                                   rdfs:comment "Difficulty swallowing, which can lead to choking, malnutrition, or aspiration, often from neurological conditions"@en ;
                                   rdfs:label "Dysphagia"@en .
 
 
-###  https://w3id.org/tkz/Dyspraxia
-<https://w3id.org/tkz/Dyspraxia> rdf:type owl:NamedIndividual ,
-                                           <https://w3id.org/tkz/SpeechFluencyDisorder> ;
+###  https://w3id.org/tkz/anonymous/Dyspraxia
+<https://w3id.org/tkz/anonymous/Dyspraxia> rdf:type owl:NamedIndividual ,
+                                           <https://w3id.org/tkz/anonymous/SpeechFluencyDisorder> ;
                                   rdfs:comment "Motor coordination disorder affecting movement, speech, or planning tasks, impacting daily activities"@en ;
                                   rdfs:label "Dyspraxia"@en .
 
 
-###  https://w3id.org/tkz/Epenthesis
-<https://w3id.org/tkz/Epenthesis> rdf:type owl:NamedIndividual ,
-                                            <https://w3id.org/tkz/SpeechError> ;
+###  https://w3id.org/tkz/anonymous/Epenthesis
+<https://w3id.org/tkz/anonymous/Epenthesis> rdf:type owl:NamedIndividual ,
+                                            <https://w3id.org/tkz/anonymous/SpeechError> ;
                                    rdfs:comment "Adding an extra sound or syllable within a word"@en ;
                                    rdfs:label "Epenthesis"@en .
 
 
-###  https://w3id.org/tkz/Frication
-<https://w3id.org/tkz/Frication> rdf:type owl:NamedIndividual ,
-                                           <https://w3id.org/tkz/SpeechError> ;
+###  https://w3id.org/tkz/anonymous/Frication
+<https://w3id.org/tkz/anonymous/Frication> rdf:type owl:NamedIndividual ,
+                                           <https://w3id.org/tkz/anonymous/SpeechError> ;
                                   rdfs:comment "Substituting a plosive sound with a fricative sound"@en ;
                                   rdfs:label "Frication"@en .
 
 
-###  https://w3id.org/tkz/Gliding
-<https://w3id.org/tkz/Gliding> rdf:type owl:NamedIndividual ,
-                                         <https://w3id.org/tkz/SpeechError> ;
+###  https://w3id.org/tkz/anonymous/Gliding
+<https://w3id.org/tkz/anonymous/Gliding> rdf:type owl:NamedIndividual ,
+                                         <https://w3id.org/tkz/anonymous/SpeechError> ;
                                 rdfs:comment "Replacing liquids \"r\" or \"l\" with glides \"w\""@en ;
                                 rdfs:label "Gliding"@en .
 
 
-###  https://w3id.org/tkz/GroupsReduction
-<https://w3id.org/tkz/GroupsReduction> rdf:type owl:NamedIndividual ,
-                                                 <https://w3id.org/tkz/SpeechError> ;
+###  https://w3id.org/tkz/anonymous/GroupsReduction
+<https://w3id.org/tkz/anonymous/GroupsReduction> rdf:type owl:NamedIndividual ,
+                                                 <https://w3id.org/tkz/anonymous/SpeechError> ;
                                         rdfs:comment "Simplification of two or more consecutive consonants."@en ;
                                         rdfs:label "GroupsReduction"@en .
 
 
-###  https://w3id.org/tkz/Idiosyncrasy
-<https://w3id.org/tkz/Idiosyncrasy> rdf:type owl:NamedIndividual ,
-                                              <https://w3id.org/tkz/SpeechError> ;
+###  https://w3id.org/tkz/anonymous/Idiosyncrasy
+<https://w3id.org/tkz/anonymous/Idiosyncrasy> rdf:type owl:NamedIndividual ,
+                                              <https://w3id.org/tkz/anonymous/SpeechError> ;
                                      rdfs:comment "Unique speech errors specific to an individual that don't follow typical patterns" ;
                                      rdfs:label "Idiosyncrasy"@en .
 
 
-###  https://w3id.org/tkz/LanguageApraxia
-<https://w3id.org/tkz/LanguageApraxia> rdf:type owl:NamedIndividual ,
-                                                 <https://w3id.org/tkz/DevelopmentalLanguageDisorder> ;
+###  https://w3id.org/tkz/anonymous/LanguageApraxia
+<https://w3id.org/tkz/anonymous/LanguageApraxia> rdf:type owl:NamedIndividual ,
+                                                 <https://w3id.org/tkz/anonymous/DevelopmentalLanguageDisorder> ;
                                         rdfs:comment "A motor speech disorder causing difficulty in planning and producing speech movements correctly"@en ;
                                         rdfs:label "LanguageApraxia"@en .
 
 
-###  https://w3id.org/tkz/LexicalSemanticsArea
-<https://w3id.org/tkz/LexicalSemanticsArea> rdf:type owl:NamedIndividual ,
+###  https://w3id.org/tkz/anonymous/LexicalSemanticsArea
+<https://w3id.org/tkz/anonymous/LexicalSemanticsArea> rdf:type owl:NamedIndividual ,
                                                       :LinguisticArea .
 
 
-###  https://w3id.org/tkz/LiquidReduction
-<https://w3id.org/tkz/LiquidReduction> rdf:type owl:NamedIndividual ,
-                                                 <https://w3id.org/tkz/SpeechError> ;
+###  https://w3id.org/tkz/anonymous/LiquidReduction
+<https://w3id.org/tkz/anonymous/LiquidReduction> rdf:type owl:NamedIndividual ,
+                                                 <https://w3id.org/tkz/anonymous/SpeechError> ;
                                         rdfs:comment "Omitting \"r\" or \"l\""@en ;
                                         rdfs:label "LiquidReduction"@en .
 
 
-###  https://w3id.org/tkz/Metathesis
-<https://w3id.org/tkz/Metathesis> rdf:type owl:NamedIndividual ,
-                                            <https://w3id.org/tkz/SpeechError> ;
+###  https://w3id.org/tkz/anonymous/Metathesis
+<https://w3id.org/tkz/anonymous/Metathesis> rdf:type owl:NamedIndividual ,
+                                            <https://w3id.org/tkz/anonymous/SpeechError> ;
                                    rdfs:comment "Reversing the order of sounds or syllables"@en ;
                                    rdfs:label "Metathesis"@en .
 
 
-###  https://w3id.org/tkz/Mild
-<https://w3id.org/tkz/Mild> rdf:type owl:NamedIndividual ,
-                                      <https://w3id.org/tkz/Severity> ;
+###  https://w3id.org/tkz/anonymous/Mild
+<https://w3id.org/tkz/anonymous/Mild> rdf:type owl:NamedIndividual ,
+                                      <https://w3id.org/tkz/anonymous/Severity> ;
                              rdfs:comment "Mild symptoms recorded."@en ;
                              rdfs:label "Mild"@en .
 
 
-###  https://w3id.org/tkz/MispelledPhoneme
-<https://w3id.org/tkz/MispelledPhoneme> rdf:type owl:NamedIndividual ,
-                                                  <https://w3id.org/tkz/SpeechError> ;
+###  https://w3id.org/tkz/anonymous/MispelledPhoneme
+<https://w3id.org/tkz/anonymous/MispelledPhoneme> rdf:type owl:NamedIndividual ,
+                                                  <https://w3id.org/tkz/anonymous/SpeechError> ;
                                          rdfs:comment "Incorrect pronunciation of a sound leading to misinterpretation"@en ;
                                          rdfs:label "MispelledPhoneme"@en .
 
 
-###  https://w3id.org/tkz/MorphoSyntacticalArea
-<https://w3id.org/tkz/MorphoSyntacticalArea> rdf:type owl:NamedIndividual ,
+###  https://w3id.org/tkz/anonymous/MorphoSyntacticalArea
+<https://w3id.org/tkz/anonymous/MorphoSyntacticalArea> rdf:type owl:NamedIndividual ,
                                                        :LinguisticArea .
 
 
-###  https://w3id.org/tkz/NearlyAbsent
-<https://w3id.org/tkz/NearlyAbsent> rdf:type owl:NamedIndividual ,
-                                              <https://w3id.org/tkz/Severity> ;
+###  https://w3id.org/tkz/anonymous/NearlyAbsent
+<https://w3id.org/tkz/anonymous/NearlyAbsent> rdf:type owl:NamedIndividual ,
+                                              <https://w3id.org/tkz/anonymous/Severity> ;
                                      rdfs:comment "Neglegible, but still present speech disorder(s) recorded."@en ;
                                      rdfs:label "NearlyAbsent"@en .
 
 
-###  https://w3id.org/tkz/OtherDisorder
-<https://w3id.org/tkz/OtherDisorder> rdf:type owl:NamedIndividual ,
-                                               <https://w3id.org/tkz/SpeechOrLanguageDisorder> ;
+###  https://w3id.org/tkz/anonymous/OtherDisorder
+<https://w3id.org/tkz/anonymous/OtherDisorder> rdf:type owl:NamedIndividual ,
+                                               <https://w3id.org/tkz/anonymous/SpeechOrLanguageDisorder> ;
                                       rdfs:comment "Other disorder."@en ;
                                       rdfs:label "OtherDisorder"@en .
 
 
-###  https://w3id.org/tkz/Palatalization
-<https://w3id.org/tkz/Palatalization> rdf:type owl:NamedIndividual ,
-                                                <https://w3id.org/tkz/SpeechError> ;
+###  https://w3id.org/tkz/anonymous/Palatalization
+<https://w3id.org/tkz/anonymous/Palatalization> rdf:type owl:NamedIndividual ,
+                                                <https://w3id.org/tkz/anonymous/SpeechError> ;
                                        rdfs:comment "Replacing a non-palatal sound with a palatal sound"@en ;
                                        rdfs:label "Palatalization"@en .
 
 
-###  https://w3id.org/tkz/PhoneticArea
-<https://w3id.org/tkz/PhoneticArea> rdf:type owl:NamedIndividual ,
+###  https://w3id.org/tkz/anonymous/PhoneticArea
+<https://w3id.org/tkz/anonymous/PhoneticArea> rdf:type owl:NamedIndividual ,
                                               :LinguisticArea .
 
 
-###  https://w3id.org/tkz/PhonologicalArea
-<https://w3id.org/tkz/PhonologicalArea> rdf:type owl:NamedIndividual ,
+###  https://w3id.org/tkz/anonymous/PhonologicalArea
+<https://w3id.org/tkz/anonymous/PhonologicalArea> rdf:type owl:NamedIndividual ,
                                                   :LinguisticArea .
 
 
-###  https://w3id.org/tkz/Posterization
-<https://w3id.org/tkz/Posterization> rdf:type owl:NamedIndividual ,
-                                               <https://w3id.org/tkz/SpeechError> ;
+###  https://w3id.org/tkz/anonymous/Posterization
+<https://w3id.org/tkz/anonymous/Posterization> rdf:type owl:NamedIndividual ,
+                                               <https://w3id.org/tkz/anonymous/SpeechError> ;
                                       rdfs:comment "Front sounds are replaced with back sounds"@en ;
                                       rdfs:label "Posteriorization"@en .
 
 
-###  https://w3id.org/tkz/PragmaticArea
-<https://w3id.org/tkz/PragmaticArea> rdf:type owl:NamedIndividual ,
+###  https://w3id.org/tkz/anonymous/PragmaticArea
+<https://w3id.org/tkz/anonymous/PragmaticArea> rdf:type owl:NamedIndividual ,
                                                :LinguisticArea .
 
 
-###  https://w3id.org/tkz/Replacement
-<https://w3id.org/tkz/Replacement> rdf:type owl:NamedIndividual ,
-                                             <https://w3id.org/tkz/SpeechError> ;
+###  https://w3id.org/tkz/anonymous/Replacement
+<https://w3id.org/tkz/anonymous/Replacement> rdf:type owl:NamedIndividual ,
+                                             <https://w3id.org/tkz/anonymous/SpeechError> ;
                                     rdfs:comment "Substituting one phoneme with another"@en ;
                                     rdfs:label "Replacement"@en .
 
 
-###  https://w3id.org/tkz/Severe
-<https://w3id.org/tkz/Severe> rdf:type owl:NamedIndividual ,
-                                        <https://w3id.org/tkz/Severity> .
+###  https://w3id.org/tkz/anonymous/Severe
+<https://w3id.org/tkz/anonymous/Severe> rdf:type owl:NamedIndividual ,
+                                        <https://w3id.org/tkz/anonymous/Severity> .
 
 
-###  https://w3id.org/tkz/Sonorization
-<https://w3id.org/tkz/Sonorization> rdf:type owl:NamedIndividual ,
-                                              <https://w3id.org/tkz/SpeechError> ;
+###  https://w3id.org/tkz/anonymous/Sonorization
+<https://w3id.org/tkz/anonymous/Sonorization> rdf:type owl:NamedIndividual ,
+                                              <https://w3id.org/tkz/anonymous/SpeechError> ;
                                      rdfs:comment "Changing a voiceless sound into a voiced sound"@en ;
                                      rdfs:label "Sonorization"@en .
 
 
-###  https://w3id.org/tkz/Stopping
-<https://w3id.org/tkz/Stopping> rdf:type owl:NamedIndividual ,
-                                          <https://w3id.org/tkz/SpeechError> ;
+###  https://w3id.org/tkz/anonymous/Stopping
+<https://w3id.org/tkz/anonymous/Stopping> rdf:type owl:NamedIndividual ,
+                                          <https://w3id.org/tkz/anonymous/SpeechError> ;
                                  rdfs:comment "Replacing fricatives or affricates with stops"@en ;
                                  rdfs:label "Stopping"@en .
 
 
-###  https://w3id.org/tkz/Stuttering
-<https://w3id.org/tkz/Stuttering> rdf:type owl:NamedIndividual ,
-                                            <https://w3id.org/tkz/SpeechFluencyDisorder> ;
+###  https://w3id.org/tkz/anonymous/Stuttering
+<https://w3id.org/tkz/anonymous/Stuttering> rdf:type owl:NamedIndividual ,
+                                            <https://w3id.org/tkz/anonymous/SpeechFluencyDisorder> ;
                                    rdfs:comment "Speech disorder marked by repeated sounds, syllables, or words, affecting fluency and communication"@en ;
                                    rdfs:label "Stuttering"@en .
 
 
-###  https://w3id.org/tkz/Variability
-<https://w3id.org/tkz/Variability> rdf:type owl:NamedIndividual ,
-                                             <https://w3id.org/tkz/SpeechError> ;
+###  https://w3id.org/tkz/anonymous/Variability
+<https://w3id.org/tkz/anonymous/Variability> rdf:type owl:NamedIndividual ,
+                                             <https://w3id.org/tkz/anonymous/SpeechError> ;
                                     rdfs:comment "Inconsistent pronunciation of the same word or sound in different instances"@en ;
                                     rdfs:label "Variability"@en .
 
 
-###  https://w3id.org/tkz/VerbalApraxia
-<https://w3id.org/tkz/VerbalApraxia> rdf:type owl:NamedIndividual ,
-                                               <https://w3id.org/tkz/SpeechSoundDisorder> ;
+###  https://w3id.org/tkz/anonymous/VerbalApraxia
+<https://w3id.org/tkz/anonymous/VerbalApraxia> rdf:type owl:NamedIndividual ,
+                                               <https://w3id.org/tkz/anonymous/SpeechSoundDisorder> ;
                                       rdfs:comment """also known as acquired apraxia of speech, verbal apraxia, or childhood apraxia of speech (CAS) when diagnosed in children—is a speech sound disorder. 
 CODE MB48A https://icd.who.int/browse/2024-01/mms/en#986651951"""@en ;
                                       rdfs:label "VerbalApraxia"@en .
 
 
-###  https://w3id.org/tkz/VocalDeletion
-<https://w3id.org/tkz/VocalDeletion> rdf:type owl:NamedIndividual ,
-                                               <https://w3id.org/tkz/SpeechError> ;
+###  https://w3id.org/tkz/anonymous/VocalDeletion
+<https://w3id.org/tkz/anonymous/VocalDeletion> rdf:type owl:NamedIndividual ,
+                                               <https://w3id.org/tkz/anonymous/SpeechError> ;
                                       rdfs:comment "Omitting a vowel sound within a word"@en ;
                                       rdfs:label "VocalDeletion"@en .
 
 
-###  https://w3id.org/tkz/VocalDissimilation
-<https://w3id.org/tkz/VocalDissimilation> rdf:type owl:NamedIndividual ,
-                                                    <https://w3id.org/tkz/SpeechError> ;
+###  https://w3id.org/tkz/anonymous/VocalDissimilation
+<https://w3id.org/tkz/anonymous/VocalDissimilation> rdf:type owl:NamedIndividual ,
+                                                    <https://w3id.org/tkz/anonymous/SpeechError> ;
                                            rdfs:comment "Two similar sounds in a word become more distinct"@en ;
                                            rdfs:label "VocalDissimilation"@en .
 
 
-###  https://w3id.org/tkz/VocalHarmony
-<https://w3id.org/tkz/VocalHarmony> rdf:type owl:NamedIndividual ,
-                                              <https://w3id.org/tkz/SpeechError> ;
+###  https://w3id.org/tkz/anonymous/VocalHarmony
+<https://w3id.org/tkz/anonymous/VocalHarmony> rdf:type owl:NamedIndividual ,
+                                              <https://w3id.org/tkz/anonymous/SpeechError> ;
                                      rdfs:comment "Vowels in a word change to harmonize in features"@en ;
                                      rdfs:label "VocalHarmony"@en .
 
 
-###  https://w3id.org/tkz/WeakSyllableDeletion
-<https://w3id.org/tkz/WeakSyllableDeletion> rdf:type owl:NamedIndividual ,
-                                                      <https://w3id.org/tkz/SpeechError> ;
+###  https://w3id.org/tkz/anonymous/WeakSyllableDeletion
+<https://w3id.org/tkz/anonymous/WeakSyllableDeletion> rdf:type owl:NamedIndividual ,
+                                                      <https://w3id.org/tkz/anonymous/SpeechError> ;
                                              rdfs:comment "Omitting the unstressed syllable in a word"@en ;
                                              rdfs:label "WeakSyllableDeletion"@en .
 
